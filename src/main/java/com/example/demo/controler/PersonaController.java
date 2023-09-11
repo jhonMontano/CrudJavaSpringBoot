@@ -42,6 +42,11 @@ public class PersonaController {
         return personaService.guardarPersonas(personas);
     }
 
+    @PutMapping("/{id}")
+    public Persona actualizarPersona(@PathVariable ("id") int id, @RequestBody Persona persona){
+        return personaService.actualizarPersona(id, persona);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarPersona(@PathVariable int id) {
         boolean resultado = personaService.eliminarPersona(id);

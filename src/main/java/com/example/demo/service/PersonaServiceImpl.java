@@ -39,6 +39,16 @@ public class PersonaServiceImpl implements IPersonaService {
         return personasNuevas;
     }
 
+    public Persona actualizarPersona(int id,Persona persona){
+        int index = 0;
+        for (Persona p :personas){
+            if (persona.getId() == id){
+                persona.setId(id);
+                personas.set(index,persona);
+            }
+        }
+        return persona;
+    }
 
     @Override
     public boolean eliminarPersona(int id) {
