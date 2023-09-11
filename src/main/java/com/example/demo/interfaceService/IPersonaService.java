@@ -11,6 +11,8 @@ public interface IPersonaService {
 
     Persona guardarPersona(Persona persona);
 
+    List<Persona> guardarPersonas(List<Persona> personasNuevas);
+
     boolean eliminarPersona(int id);
 
 }

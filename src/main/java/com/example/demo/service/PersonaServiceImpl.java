@@ -19,7 +19,11 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     public Persona obtenerPersonaPorId(int id) {
-        // Implementa la lógica para obtener una persona por su ID
+        for( Persona persona : personas){
+            if(persona.getId() == id){
+                return persona;
+            }
+        }
         return null;
     }
 
@@ -30,8 +34,19 @@ public class PersonaServiceImpl implements IPersonaService {
     }
 
     @Override
+    public List<Persona> guardarPersonas(List<Persona> personasNuevas) {
+        personas.addAll(personasNuevas);
+        return personasNuevas;
+    }
+
+
+    @Override
     public boolean eliminarPersona(int id) {
-        // Implementa la lógica para eliminar una persona por su ID
+        for( Persona persona : personas){
+            if(persona.getId() == id){
+                return personas.remove(persona);
+            }
+        }
         return false;
     }
 }

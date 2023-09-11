@@ -37,6 +37,11 @@ public class PersonaController {
         return personaService.guardarPersona(persona);
     }
 
+    @PostMapping("/crearPersonas")
+    public List<Persona> crearPersonas(@RequestBody List<Persona> personas){
+        return personaService.guardarPersonas(personas);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarPersona(@PathVariable int id) {
         boolean resultado = personaService.eliminarPersona(id);
